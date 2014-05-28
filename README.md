@@ -2,7 +2,8 @@
 This is a script for a contact form which is able to sent PGP encrypted emails. The script has currently an alpha status.
 
 ## Requirements
-- gnupg
+- PHP 5
+- GnuPG
 
 ## Installation
 1. Copy your public key file for example to 'public/assets/youremail.asc'.
@@ -14,5 +15,6 @@ The encryption of the email is done on the server side. So you have to make sure
 ## Used Projects
 - Composer
 - Silex
+- Twig
 - Twitter Boostrap
 - GnuPG
