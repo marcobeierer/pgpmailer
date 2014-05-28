@@ -1,0 +1,5 @@
+cache/*
+src/config.php
+gpg/*
+public/assets/marco.beierer@mbsecurity.ch.asc
+notes.mkd

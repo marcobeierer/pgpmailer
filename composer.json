@@ -1,0 +1,21 @@
+{
+	"name": "mbsec/pgpmailer",
+	"description": "PGP Mailer",
+
+	"repositories": [
+		{
+			"type": "pear",
+			"url": "http://pear.php.net"
+		}
+	],
+	"require": {
+		"silex/silex": "~1.2",
+		"twig/twig": "1.*",
+		"symfony/twig-bridge": "~2.3",
+		"symfony/form": "~2.3",
+		"symfony/validator": "~2.3",
+		"symfony/config": "~2.3",
+		"symfony/translation": "~2.3",
+		"pear-pear.php.net/Crypt_GPG": "1.3.*"
+	}
+}
