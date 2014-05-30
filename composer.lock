@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e17ad2b87c5792800c4cdc8623f2db45",
+    "hash": "49ca6c6486bde540f33b6b2fa1c28259",
     "packages": [
         {
             "name": "pear-pear.php.net/Crypt_GPG",

@@ -1,20 +1,8 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
+use MBSecurity\Form\ContactForm;
 
-$form = $app['form.factory']
-	->createBuilder('form')
-	->add('name', 'text', array('label' => 'Name'))
-	->add('email', 'email', array('label' => 'Email'))
-	->add('subject', 'text', array('label' => 'Subject'))
-	->add('message', 'textarea', array(
-		'label' => 'Message',
-		'attr' => array(
-			'rows' => '7')))
-	->add('submit', 'submit', array(
-		'label' => 'Send email',
-		'attr' => array(
-			'class' => 'btn btn-default')))
-	->getForm();
+$form = $app['form.factory']->create(new ContactForm());
 
 $app->get('/', function () use ($app, $form) {
 	return $app['twig']->render('homepage.html', array(
@@ -40,7 +28,7 @@ $app->post('/', function (Request $request) use ($app, $form, $config) {
 			'Content-Type: text/plain; charset=UTF-8' . "\r\n" .
 			'Content-Transfer-Encoding: quoted-printable' . "\r\n" .
 			"\r\n" .
-			nl2br($data['message']) . "\r\n" .
+			$data['message'] . "\r\n" .
 			"\r\n" .
 			'--37ATkjK6nO8wWoV1MT91OAQPlh4P6le0q--' . "\r\n";
 
