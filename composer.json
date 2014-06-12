@@ -1,8 +1,16 @@
 {
-	"name": "mbsec/pgpmailer",
+	"name": "mbdev/pgpmailer",
 	"description": "PGP Mailer",
+	"keywords": ["mailer", "pgp", "encryption", "gpg"],
+	"homepage": "https://webguerilla.net/projects/pgp-mailer",
 	"license": "AGPL-3.0",
-
+	"authors": [
+		{
+			"name": "Marco Beierer",
+			"email": "email@marcobeierer.ch",
+			"homepage": "https://www.marcobeierer.ch"
+		}
+	],
 	"repositories": [
 		{
 			"type": "pear",
@@ -21,7 +29,7 @@
 	},
 	"autoload": {
 		"psr-0": { 
-			"MBSecurity": "src"
+			"MBDev": "src"
 		}
 	}
 }
