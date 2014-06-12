@@ -1,6 +1,7 @@
 {
 	"name": "mbsec/pgpmailer",
 	"description": "PGP Mailer",
+	"license": "AGPL-3.0",
 
 	"repositories": [
 		{
