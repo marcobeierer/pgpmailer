@@ -1,6 +1,6 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
-use MBSecurity\Form\ContactForm;
+use MBDev\Form\ContactForm;
 
 $form = $app['form.factory']->create(new ContactForm());
 
@@ -19,8 +19,8 @@ $app->post('/', function (Request $request) use ($app, $form, $config) {
 		$data = $form->getData();
 
 		$gpg = new Crypt_GPG(array('homedir' => PATH_GPG));
-		$gpg->importKeyFile($config->publicKeyFilepath);
-		$gpg->addEncryptKey('62EA8B00');
+		$gpg->importKeyFile($config->getPublicKeyFilepath());
+		$gpg->addEncryptKey($config->getEncryptionKeyID());
 
 		$message = 'Content-Type: multipart/mixed; boundary="37ATkjK6nO8wWoV1MT91OAQPlh4P6le0q"' . "\r\n" .
 			"\r\n" .
@@ -56,7 +56,7 @@ $app->post('/', function (Request $request) use ($app, $form, $config) {
 			' protocol="application/pgp-encrypted";' . "\r\n" .
 			' boundary="24i8m5cu37hapwm904t8v"' . "\r\n"; // TODO randomize boundary
 
-		if (mail($config->messageReceiverAddress, $data['subject'], $fullEncryptedMessage, $headers)) {
+		if (mail($config->getMessageReceiverAddress(), $data['subject'], $fullEncryptedMessage, $headers)) {
 			return $app['twig']->render('confirm.html');
 		}
 	}

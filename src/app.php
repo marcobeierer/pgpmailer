@@ -1,13 +1,13 @@
 <?php
 use Silex\Provider\FormServiceProvider;
 
-$app['debug'] = $config->debug;
+$app['debug'] = $config->isDebugging();
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
 	'twig.path' => __DIR__.'/views',
 	'twig.options' => array(
 		'strict_variables' => false,
-		'cache' => $config->cache
+		'cache' => $config->isCaching()
 	)
 ));
 
