@@ -19,7 +19,7 @@ $protocol = 'http';
 if (isset($_SERVER['HTTPS'])) {
 	$protocol = 'https';
 }
-$config->baseURL = sprintf('%s://%s%s', $protocol, $_SERVER['HTTP_HOST'], $_SERVER['REQUEST_URI']);
+$config->baseURL = sprintf('%s://%s%s', $protocol, $_SERVER['HTTP_HOST'], $_SERVER['REQUEST_URI']); // TODO adjust config class
 
 $app->run();
 ?>

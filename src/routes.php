@@ -57,11 +57,16 @@ $app->post('/', function (Request $request) use ($app, $form, $config) {
 			' boundary="24i8m5cu37hapwm904t8v"' . "\r\n"; // TODO randomize boundary
 
 		if (mail($config->getMessageReceiverAddress(), $data['subject'], $fullEncryptedMessage, $headers)) {
-			return $app['twig']->render('confirm.html');
+
+			$app['session']->getFlashBag()->set('successfull', 'Your message has been sent successfully.');
+			return $app->redirect($config->baseURL); // TODO
 		}
 	}
 
-	return $app['twig']->render('error.html');
+	return $app['twig']->render('homepage.html', array(
+		'form' => $form->createView(),
+		'error' => true
+	));
 });
 
 ?>

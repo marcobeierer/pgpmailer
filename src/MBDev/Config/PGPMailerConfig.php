@@ -1,4 +1,6 @@
 <?php
+namespace MBDev\Config;
+
 class PGPMailerConfig {
 
 	protected $publicKeyFilepath;
