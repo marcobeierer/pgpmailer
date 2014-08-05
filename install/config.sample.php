@@ -10,4 +10,3 @@ $config = new PGPMailerConfig($publicKeyFilepath, $encryptionKeyID, $messageRece
 $config->setDebugging(true);
 $config->setCaching(false);
 ?>
-
