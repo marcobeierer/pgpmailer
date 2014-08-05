@@ -1,9 +1,9 @@
 {
-	"name": "mbdev/pgpmailer",
+	"name": "webguerilla/pgpmailer",
 	"description": "PGP Mailer",
 	"keywords": ["mailer", "pgp", "encryption", "gpg"],
-	"homepage": "https://webguerilla.net/projects/pgp-mailer",
-	"license": "AGPL-3.0",
+	"homepage": "https://webguerilla.net/projects/php/pgp-mailer",
+	"license": "GPL-3.0",
 	"authors": [
 		{
 			"name": "Marco Beierer",
@@ -29,7 +29,7 @@
 	},
 	"autoload": {
 		"psr-0": { 
-			"MBDev": "src"
+			"Webguerilla": "src"
 		}
 	}
 }
