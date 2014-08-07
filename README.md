@@ -1,27 +1,48 @@
-# PGP Mailer
-This is a script for a contact form which is able to sent PGP encrypted emails. The script has currently an alpha status.
+# pgpmailer
+
+This is a script for a contact form which is able to sent PGP encrypted emails. The content of the submission is encrypted to a public key and is done on the server. It is strongly recommended that you only use pgpmailer with a secure connection such as SSL. If you use pgpmailer on an unsecure connection there is a possibility your private data can be intercepted and modified before it is encrypted.
 
 ## Requirements
 - PHP 5
 - GnuPG
+- composer
 
-## Installation
-1. Copy your public key file for example to 'public/assets/youremail.asc'.
-2. Modify the config file in 'install/config.sample.php' and copy the file to 'src/config.php'.
+## Install
+
+Via Composer
+
+``` json
+{
+    "require": {
+        "league/pgpmailer": "~1.0"
+    }
+}
+```
+
+## Usage
+
+pgpmailer requires having a PGP key and exporting an ASCII-armored public key.
+
+1. Copy an ASCII-armored public key to 'public/assets/' For example: 'public/assets/0xBADB0B1337.asc'.
+2. Modify the config file in 'install/config.sample.php' where it says $publicKeyFilepath. For example: $publicKeyFilepath = PATH_PUBLIC . '/assets/0xBADB0B1337.asc'
+4. Move the file 'install/config.sample.php' to 'src/config.php'.
 3. Run ./composer.phar update
 
-### Using Composer
-<a href="https://packagist.org/packages/webguerilla/pgpmailer">PGP Mailer at Packagist</a>.
+## Testing
 
-## Important Notes
-The encryption of the email is done on the server side. So you have to make sure that the connection between the client and server is secure. For example by using SSL.
+``` bash
+$ phpunit
+```
 
-## Used Projects and Dependencies
-- Composer
-- Silex
-- Twig
-- Twitter Boostrap
-- GnuPG
+## Contributing
 
-## Demo
-A demo is coming soon.
+Please see [CONTRIBUTING](https://github.com/webguerilla/pgpmailer/blob/master/CONTRIBUTING.md) for details.
+
+## Credits
+
+- [Marco Beierer](https://github.com/webguerilla)
+- [All Contributors](https://github.com/thephpleague/pgpmailer/contributors)
+
+## License
+
+GNU GENERAL PUBLIC LICENSE Version 3. Please see [License File](https://github.com/webguerilla/pgpmailer/blob/master/LICENSE) for more information.
