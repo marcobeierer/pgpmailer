@@ -1,5 +1,5 @@
 <?php
-namespace Webguerilla\Config;
+namespace League\Config;
 
 class PGPMailerConfig {
 
