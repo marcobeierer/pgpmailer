@@ -1,5 +1,5 @@
 <?php
-use League\Config\PGPMailerConfig;
+use Webguerilla\Config\PGPMailerConfig;
 
 $publicKeyFilepath = PATH_PUBLIC . ''; // path to the public key file (relative from /public)
 $encryptionKeyID = ''; // id of the key used for encryption

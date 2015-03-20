@@ -1,6 +1,6 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
-use League\Form\ContactForm;
+use Webguerilla\Form\ContactForm;
 
 $form = $app['form.factory']->create(new ContactForm());
 

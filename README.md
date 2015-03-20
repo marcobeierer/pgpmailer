@@ -14,7 +14,7 @@ Via Composer
 ``` json
 {
     "require": {
-        "league/pgpmailer": "~1.0"
+        "webguerilla/pgpmailer": "~1.0"
     }
 }
 ```
@@ -41,7 +41,7 @@ Please see [CONTRIBUTING](https://github.com/webguerilla/pgpmailer/blob/master/C
 ## Credits
 
 - [Marco Beierer](https://github.com/webguerilla)
-- [All Contributors](https://github.com/thephpleague/pgpmailer/contributors)
+- [All Contributors](https://github.com/webguerilla/pgpmailer/contributors)
 
 ## License
 
